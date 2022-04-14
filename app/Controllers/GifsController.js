@@ -12,14 +12,17 @@ export class GifsController
 {
     constructor()
     {
-        ProxyState.on("gifs", _drawGifs)
+        ProxyState.on("gifs", _drawGifs);
     }
 
-    searchGifs(searchTerm)
+    searchGifs()
     {
         try
         {
-            gifsService.searchGifs(serachTerm);
+            window.event.preventDefault();
+            const form = window.event.target;
+            const searchTerm = form.search.value;
+            gifsService.searchGifs(searchTerm);
         }
         catch(error)
         {
@@ -30,7 +33,15 @@ export class GifsController
 
     selectGif(gifId)
     {
-        const selectedGif = ProxyState.gifs.find(gif => gif.id === gifId)
-        document.getElementById("url").value = selectedGif.url;
+        try
+        {
+            const selectedGif = ProxyState.gifs.find(gif => gif.id === gifId);
+            document.getElementById("url").value = selectedGif.url;
+        }
+        catch(error)
+        {
+            console.error("[SELECT GIF ERROR]", error.message);
+            Pop.toast(error.message, "error");
+        }
     }
 }

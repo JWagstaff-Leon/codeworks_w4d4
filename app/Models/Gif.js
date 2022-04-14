@@ -9,7 +9,7 @@ export class Gif
     get Template()
     {
         return `
-        <div class="col-12 mb-3 p-2" onclick="selectGif">
+        <div class="col-6 mx-1 mb-2 border-dark" onclick="app.gifsController.selectGif('${this.id}')">
             <img src="${this.url}" class="search-result"/>
         </div>
         `;
