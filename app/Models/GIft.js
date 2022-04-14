@@ -16,7 +16,7 @@ export class Gift
     get ClosedTemplate()
     {
         return `
-        <div class="gift-card shadow bg-warning m-3 text-center align-items-center">
+        <div class="gift-card shadow bg-warning m-3 text-center align-items-center" onclick="app.giftsController.openGift('${this.id}')">
             <div class="card h-100">
                 <img src="/./assets/img/wrappape.png" class="card-img" alt="...">
                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
