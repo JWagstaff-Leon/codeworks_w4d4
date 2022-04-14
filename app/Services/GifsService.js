@@ -4,12 +4,12 @@ import { giphyApi, giphyApiParams } from "./AxiosService.js";
 
 class GifsService
 {
-    searchGifs(searchTerm)
+    async searchGifs(searchTerm)
     {
         giphyApiParams.q = searchTerm;
-        const res = giphyApi.get("search", giphyApiParams);
+        const res = await giphyApi.get("search", giphyApiParams);
         console.log(res);
-        ProxyState.gifs = res.data.map(gif => new Gif(gif));
+        ProxyState.gifs = res.data.data.map(gif => new Gif(gif));
         giphyApiParams.q = "";
     }
 }
