@@ -14109,4 +14109,20 @@ hr {
   opacity: 1;
 }
 
+.gift-card {
+  width: 20vw;
+  height: 25vh;
+}
+
+.object-fit {
+  height: 20vh;
+  width: 20vw;
+  object-fit: cover;
+}
+
+.object-wrap {
+  height: 25vh;
+  width: 20vw;
+}
+
 /*# sourceMappingURL=main.css.map */
