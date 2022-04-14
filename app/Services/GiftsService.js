@@ -24,7 +24,6 @@ class GiftsService
             throw new Error("GiftsService.openGift could not find the gift with the right ID.");
         }
         const res = await sandboxApi.put(giftId, { opened: true });
-        console.log("Opened Gift API response:", res);
         ProxyState.gifts.splice(openedGiftIndex, 1, res.data);
         ProxyState.gifts = ProxyState.gifts;
     }

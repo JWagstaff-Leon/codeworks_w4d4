@@ -3,9 +3,9 @@ import { gifsService } from "../Services/GifsService.js";
 
 function _drawGifs()
 {
-    let giftsTemplate = "";
-    ProxyState.gifs.forEach(gif => template += gif.Template);
-    document.getElementById("gifs-list").innerHTML = giftsTemplate;
+    let gifsTemplate = "";
+    ProxyState.gifs.forEach(gif => gifsTemplate += gif.Template);
+    document.getElementById("gifs-list").innerHTML = gifsTemplate;
 }
 
 export class GifsController

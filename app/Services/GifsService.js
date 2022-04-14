@@ -7,8 +7,7 @@ class GifsService
     async searchGifs(searchTerm)
     {
         giphyApiParams.q = searchTerm;
-        const res = await giphyApi.get("search", giphyApiParams);
-        console.log(res);
+        const res = await giphyApi.get("search", { params: giphyApiParams} );
         ProxyState.gifs = res.data.data.map(gif => new Gif(gif));
         giphyApiParams.q = "";
     }

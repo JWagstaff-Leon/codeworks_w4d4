@@ -3,7 +3,7 @@ import { GiftsController } from "./Controllers/GiftsController.js";
 
 class App
 {
-    giftscontroller = new GiftsController();
+    giftsController = new GiftsController();
     gifsController = new GifsController();
 }
 
