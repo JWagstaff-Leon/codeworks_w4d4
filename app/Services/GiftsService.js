@@ -1,11 +1,13 @@
 import { ProxyState } from "../AppState.js";
+import { Gift } from "../Models/GIft.js";
 import { sandboxApi } from "./AxiosService.js";
 
 class GiftsService
 {
     async getAllGifts()
     {
-        let res = await sandboxApi.get("");
+        const res = await sandboxApi.get("");
+        ProxyState.gifts = res.data.map(gift => new Gift(gift));
     }
 
     async addGift(newGift)

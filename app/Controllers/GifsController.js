@@ -4,12 +4,8 @@ import { gifsService } from "../Services/GifsService.js";
 function _drawGifs()
 {
     let giftsTemplate = "";
-
     ProxyState.gifs.forEach(gif => template += gif.Template);
-
-    // TODO add element id
-    throw new Error("GifsController._drawGifs has a missing element id.");
-    document.getElementById("").innerHTML = giftsTemplate;
+    document.getElementById("gifs-list").innerHTML = giftsTemplate;
 }
 
 export class GifsController
@@ -32,10 +28,9 @@ export class GifsController
         }
     }
 
-    selectGif(gifUrl)
+    selectGif(gifId)
     {
-        // TODO add url input id
-        throw new Error("GifsController.selectGif has a missing element id.")
-        document.getElementById
+        const selectedGif = ProxyState.gifs.find(gif => gif.id === gifId)
+        document.getElementById("url").value = selectedGif.url;
     }
 }

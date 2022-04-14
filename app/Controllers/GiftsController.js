@@ -5,12 +5,8 @@ import { giftsService } from "../Services/GiftsService.js";
 function _drawGifts()
 {
     let giftsTemplate = "";
-
     ProxyState.gifts.forEach(gift => giftsTemplate += gift.Template);
-
-    // TODO add element id
-    throw new Error("GiftsController._drawGifts has a missing element id.");
-    document.getElementById("").innerHTML = giftsTemplate;
+    document.getElementById("gifts-list").innerHTML = giftsTemplate;
 }
 
 function _getGiftsFromApi()
@@ -41,12 +37,10 @@ export class GiftsController
             window.event.preventDefault();
             const form = window.event.target;
 
-            //TODO add in form names/ids
-            throw new Error("GiftsController.addGift has missing form ids.");
             const newGiftData = 
             {
-                tag: form./*id.*/value,
-                url: form./*id.*/value,
+                tag: form.tag.value,
+                url: form.url.value,
                 opened: false
             };
 

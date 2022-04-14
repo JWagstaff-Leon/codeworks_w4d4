@@ -11,7 +11,6 @@ class GifsService
         console.log(res);
         ProxyState.gifs = res.data.map(gif => new Gif(gif));
         giphyApiParams.q = "";
-
     }
 }
 
