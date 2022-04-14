@@ -14120,9 +14120,10 @@ hr {
   object-fit: cover;
 }
 
-.object-wrap {
-  height: 25vh;
-  width: 20vw;
+.card-img {
+  min-height: 100%;
+  object-fit: cover;
+  min-width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
