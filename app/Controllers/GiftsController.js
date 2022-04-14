@@ -46,6 +46,7 @@ export class GiftsController
 
             const newGift = new Gift(newGiftData);
             giftsService.addGift(newGift);
+            form.reset();
         }
         catch(error)
         {

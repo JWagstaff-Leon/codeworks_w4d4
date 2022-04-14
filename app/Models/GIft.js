@@ -2,7 +2,7 @@ export class Gift
 {
     constructor(data)
     {
-        this.id = data.id;
+        this._id = data._id;
         this.tag = data.tag;
         this.url = data.url;
         this.opened = data.opened || false;
@@ -16,12 +16,12 @@ export class Gift
     get ClosedTemplate()
     {
         return `
-        <div class="gift-card shadow bg-warning m-3 text-center align-items-center" onclick="app.giftsController.openGift('${this.id}')">
+        <div class="gift-card shadow bg-warning m-3 text-center align-items-center" onclick="app.giftsController.openGift('${this._id}')">
             <div class="card h-100">
                 <img src="/./assets/img/wrappape.png" class="card-img" alt="...">
                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                 <div class="bg-grey p-2 rounded">
-                    <h5 class="card-title fw-bold">Card title</h5>
+                    <h5 class="card-title fw-bold">${this.tag}</h5>
                     <p class="card-text fw-bold">Click to Open</p>
                 </div>
                 </div>
