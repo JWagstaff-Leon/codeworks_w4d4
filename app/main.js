@@ -1,7 +1,10 @@
-import { ValuesController } from "./Controllers/ValuesController.js";
+import { GifsController } from "./Controllers/GifsController.js";
+import { GiftsController } from "./Controllers/GiftsController.js";
 
-class App {
-  valuesController = new ValuesController();
+class App
+{
+    giftscontroller = new GiftsController();
+    gifsController = new GifsController();
 }
 
 window["app"] = new App();
