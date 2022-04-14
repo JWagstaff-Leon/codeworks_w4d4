@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js";
-import { Gift } from "../Models/GIft.js";
+import { Gift } from "../Models/Gift.js";
 import { giftsService } from "../Services/GiftsService.js";
 
 function _drawGifts()
