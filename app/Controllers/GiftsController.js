@@ -31,7 +31,7 @@ export class GiftsController
     constructor()
     {
         ProxyState.on("gifts", _drawGifts);
-        this._getGiftsFromApi();
+        _getGiftsFromApi();
     }
 
     addGift()
