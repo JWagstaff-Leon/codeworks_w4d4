@@ -30,7 +30,7 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3 bg-info">
+        <div class="col-md-3 bg-info scrollable-y">
           <div>
             <form onsubmit="app.giftsController.addGift()">
               <div class="mb-3">
@@ -42,26 +42,41 @@
                 <input type="url" class="form-control" name="url" id="url" aria-describedby="helpId" placeholder="URL...">
               </div>
               <div class="input-group-append text-end">
-                <button class="btn btn-outline-secondary bg-primary" type="button">Add Gif</button>
+                <button class="btn btn-outline-secondary bg-primary text-info" type="button">Add Gif</button>
               </div>
             </form>
           </div>
           <hr>
-          <div class="d-flex">
-            <form onsubmit="app.gifsController.searchGifs()">
+          <div >
+            <form class="d-flex" onsubmit="app.gifsController.searchGifs()">
               <input type="text" id="search" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary bg-primary" type="button"><i class="mdi mdi-magnify text-info"></i></button>
+                <button class="btn btn-outline-secondary bg-primary" type="submit"><i class="mdi mdi-magnify text-info"></i></button>
               </div>
             </form>
           </div>
-          <div class="row" id="gifs-list">
+          <div class="d-flex flex-wrap" id="gifs-list">
+            <div class="col-6 mb-3 p-2" onclick="selectGif">
+              <img src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" class="search-result"/>
+            </div>
+            <div class="col-6 mb-3 p-2" onclick="selectGif">
+              <img src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" class="search-result"/>
+            </div>
+            <div class="col-6 mb-3 p-2" onclick="selectGif">
+              <img src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" class="search-result"/>
+            </div>
+            <div class="col-6 mb-3 p-2" onclick="selectGif">
+              <img src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" class="search-result"/>
+            </div>
+            <div class="col-6 mb-3 p-2" onclick="selectGif">
+              <img src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" class="search-result"/>
+            </div>
             <div class="col-6 mb-3 p-2" onclick="selectGif">
               <img src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" class="search-result"/>
             </div>
           </div>
         </div>
-        <div class="col-md-9 d-flex flex-wrap" id="gifts-list">
+        <div class="col-md-9 d-flex flex-wrap scrollable-y" id="gifts-list">
           <div class="gift-card shadow bg-warning m-3 text-center align-items-center">
             <div>
               <img class="object-fit" src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" alt="">
@@ -96,11 +111,7 @@
 
 
 
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made by Joshua & Eric</small></p>
-    </div>
-  </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
