@@ -24,6 +24,9 @@
       </a>
     </nav>
   </header>
+
+
+
   <main>
     <div class="container-fluid">
       <div class="row">
@@ -45,16 +48,28 @@
           </div>
           <hr>
           <div class="d-flex">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary bg-primary" type="button"><i class="mdi mdi-magnify text-info"></i></button>
+            <form onsubmit="app.gifsController.searchGifs()">
+              <input type="text" id="search" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary bg-primary" type="button"><i class="mdi mdi-magnify text-info"></i></button>
+              </div>
+            </form>
+          </div>
+          <div class="row" id="gifs-list">
+            <div class="col-6 mb-3 p-2" onclick="selectGif">
+              <img src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" class="search-result"/>
             </div>
           </div>
         </div>
-        <div class="col-md-9 d-flex flex-wrap">
+        <div class="col-md-9 d-flex flex-wrap" id="gifts-list">
           <div class="gift-card shadow bg-warning m-3 text-center align-items-center">
             <div>
               <img class="object-fit" src="https://media4.giphy.com/media/W5m5zISfh2u6mBP0Zx/200.gif?cid=c23184be5so58q98hwmnvq88ej3xsrz1e45wcngxh7vc511a&rid=200.gif&ct=g" alt="">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                <div class="bg-grey p-2 rounded">
+                  <h5 class="card-title fw-bold">Card title</h5>
+                  <p class="card-text fw-bold">Click to Open</p>
+                </div>
             </div>
             <p>image caption</p>
           </div>
@@ -76,6 +91,11 @@
       </div>
     </div>
   </main>
+
+
+
+
+
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <p><small>Made by Joshua & Eric</small></p>

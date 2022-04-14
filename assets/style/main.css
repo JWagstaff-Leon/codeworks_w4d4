@@ -14126,4 +14126,9 @@ hr {
   min-width: 100%;
 }
 
+.search-result {
+  max-height: 20vh;
+  width: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */
